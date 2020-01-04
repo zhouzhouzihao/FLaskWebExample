@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+{%if flag == 0%}
+<title>各省发生地面塌陷次数(最近九年)</title>
+    {%else%}
+  <title>各省地下水每年的水量(最近九年)</title>
+    {%endif%}
+<style type="text/css">
+    h1{
+        color:blue;
+        font-size: 48px;
+        text-align:center;
+    }
+
+    #other{
+        position:relative;
+        color:blue;
+        font-size:18px;
+        text-decoration:none;
+        margin-left:20%;
+        }
+    #show_graph{
+        position:relative;
+        color:blue;
+        font-size:18px;
+        text-decoration:none;
+        margin-left:30%;
+      }
+      nav li{
+        list-style:none;
+        display:block;
+      }
+      nav{
+        position:relative;
+        left:55%;
+      }
+</style>
+</head>
+
+<body >
+
+    {%if flag == 0%}
+    <h1>各省发生地面塌陷次数(最近九年)</h1>
+    {%else%}
+    <h1>各省地下水每年的水量(最近九年)</h1>
+    {%endif%}
+    <nav>
+        <select name="jumpMenu" id="jumpMenu" onchange="MM_jumpMenu('parent',this,0)">
+            <option value="">查看图表</option>
+            <option value="http://127.0.0.1:5000/graph/1">中国各地区地面塌陷次数环形图</option>
+            <option value="http://127.0.0.1:5000/graph/2">中国各地区地下水水量环形图</option>
+            <option value="http://127.0.0.1:5000/graph/3">中国部分地区地区个年地面坍塌次数折线图</option>
+            <option value="http://127.0.0.1:5000/graph/4">中国部分地区地区个年地下水量折线图</option>
+            <option value="http://127.0.0.1:5000/graph/5">中国部分地区地区个年地面坍塌次数柱状图</option>
+            <option value="http://127.0.0.1:5000/graph/6">中国部分地区地区个年地下水量柱状图</option>
+            <option value="http://127.0.0.1:5000/graph/7">中国部分地区地区个年地面坍塌次数地图</option>
+        </select>
+    </nav>
+        <table align="center" border="0" cellspacing="20">
+            <tr>
+                <th>地区</th>
+                <th>2009</th>
+                <th>2010</th>
+                <th>2011</th>
+                <th>2012</th>
+                <th>2013</th>
+                <th>2014</th>
+                <th>2015</th>
+                <th>2016</th>
+                <th>2017</th>
+            </tr>
+            <tbody >
+            {%for data in datas%}
+                <tr>
+                    {%for i in data%}
+                    <td>{{i}}</td>
+                    {%endfor%}
+                </tr>
+            {%endfor%}
+            </tbody>
+        </table>
+    {%if flag == 0%}
+        <a id="show_graph" href="show_graph/{{no}}">查看图表</a>
+        <a id="other" href="/DXS">查看各省地下水每年的水量信息</a>
+
+    {%else%}
+        <a id="show_graph" href="show_graph/{{no}}">查看图表</a>
+        <a id="other" href="/DMTX">查看各省地面塌陷信息</a>
+
+    {%endif%}
+    <script type="text/javascript">
+    <!--
+    function MM_jumpMenu(targ, selObj,restore){ //v3.0
+    eval(targ +".location='"+selObj.options[selObj.selectedIndex].value+"'");
+    if (restore) selObj.selectedIndex=0;
+    }
+    //-->
+    </script>
+</body>
+</html>
