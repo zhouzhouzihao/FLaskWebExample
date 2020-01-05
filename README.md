@@ -11,3 +11,4 @@
               3.show_graph/(1/2/3/4/5/6/7)展示图标信息
 2）图表生成采用pyecharts
 
+pythonanywhere:http://1146495579.pythonanywhere.com/show/DMTX/
