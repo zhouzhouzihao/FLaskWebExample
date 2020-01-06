@@ -28,4 +28,4 @@ pytonanywhere[点击跳转]('')
    4）@app.route('/graph/<string:no>', methods=['GET'])用来接收前端传来的/graph/(no)中的get请求判断图表编号
       主要逻辑为前端下拉框变化后执行MM_jumpMenu('parent',this,0)js函数，获取每个option标签中的value值并根据value值实现页面的跳转，graph(no)接收       前端传来的url中的no值进行判断在执行相应的图表生成函数最后用render_template函数使用模板，显示图表。
 ### 二、FLask动作表述：
-
+     进入首页自动跳转到/show/DMTX, 选择下拉框进行跳转， 点击查看地下水跳转到/show/DXS
