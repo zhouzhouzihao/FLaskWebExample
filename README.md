@@ -1,7 +1,7 @@
 # Python期末作业技术文档
 github:[点击跳转]('https://github.com/zhouzhouzihao/FLaskWebExample')
 pytonanywhere[点击跳转]('')
-本次作业设计主要以flask为后台，前端界面用jinja2实现了web服务器前后数据的交互
+本次作业设计主要以flask为后台，前端界面用jinja2及js实现了web服务器前后数据的交互
 ## HTML档描述
 
 ### 一、FLASK 描述
